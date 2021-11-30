@@ -358,3 +358,14 @@ body {
     color: rgb(186, 183, 202);
     font-size: 14px;
 }
+
+@media screen and (max-width: 1007px) {
+    #app-cover {
+        width: 100%;
+    }
+
+    #list {
+        width: 100%;
+    }
+
+}
