@@ -21,7 +21,7 @@ for file in os.listdir('./Musics'):
         name = split[0]
         artist = ''
     music = dict(name=name.strip(), artist=artist.strip(
-    ), url="https://github.com/bkit9x/nhac/blob/main/Musics/"+urllib.parse.quote(file)+"?raw=true")
+    ), url="https://raw.githubusercontent.com/bkit9x/nhac/main/Musics/"+urllib.parse.quote(file))
     musics.append(music)
 
 with open('musics.json', 'w') as f:
