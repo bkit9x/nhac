@@ -1,5 +1,6 @@
 import json
 import os
+import urllib.parse
 
 musics = []
 
@@ -11,7 +12,7 @@ musics = []
 #         os.rename(file, file.replace('-'+last, ''))
 #         print(file)
 
-for file in os.listdir('./'):
+for file in os.listdir('./Musics'):
     split = file.split('-')
     if len(split) > 1:
         name = split[0]
@@ -19,8 +20,9 @@ for file in os.listdir('./'):
     else:
         name = split[0]
         artist = ''
-    music = dict(name=name.strip(), artist=artist.strip(), url="Musics/"+file)
+    music = dict(name=name.strip(), artist=artist.strip(
+    ), url="https://github.com/bkit9x/nhac/blob/main/Musics/"+urllib.parse.quote(file)+"?raw=true")
     musics.append(music)
 
-with open('../musics.json', 'w') as f:
+with open('musics.json', 'w') as f:
     json.dump(musics, f)
