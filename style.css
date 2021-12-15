@@ -13,7 +13,7 @@ body {
     bottom: 10px;
     right: 0;
     left: 0;
-    width: 430px;
+    width: 530px;
     height: 100px;
     margin: -4px auto;
 }
@@ -24,13 +24,14 @@ body {
     right: -30px;
     bottom: -30px;
     left: -30px;
-    background-image: url("./Background/bg1.jpg");
+    background-image: url("./Background/background1.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
     z-index: -1;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+
 }
 
 
@@ -46,30 +47,36 @@ body {
     right: 15px;
     left: 15px;
     padding: 13px 22px 10px 184px;
-    background-color: #fff7f7;
+    background-color: #4154805d;
     border-radius: 15px 15px 0 0;
     -webkit-transition: 0.3s ease top;
     transition: 0.3s ease top;
     z-index: 1;
+    opacity: 0;
+    box-shadow: inset 0 0 10px rgb(216, 214, 214);
+
 }
 
 #player-track.active {
     top: -92px;
+    opacity: 1;
 }
 
 #album-name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #54576f;
+    color: #e9ecff;
     font-size: 17px;
     font-weight: bold;
 }
 
 #track-name {
-    color: #acaebd;
+    color: #bcbfd1;
     font-size: 13px;
     margin: 2px 0 13px 0;
+    font-weight: bold;
+    font-style: italic;
 }
 
 #track-time {
@@ -89,15 +96,15 @@ body {
 #current-time, #track-length {
     color: transparent;
     font-size: 11px;
-    background-color: #ffe8ee;
     border-radius: 10px;
     -webkit-transition: 0.3s ease all;
     transition: 0.3s ease all;
 }
 
 #track-time.active #current-time, #track-time.active #track-length {
-    color: #f86d92;
+    color: #f6f6f6;
     background-color: transparent;
+    font-weight: bold;
 }
 
 #s-area, #seek-bar {
@@ -142,7 +149,7 @@ body {
     bottom: 0;
     left: 0;
     width: 0;
-    background-color: #fd6d94;
+    background-color: #c36dfd;
     -webkit-transition: 0.2s ease width;
     transition: 0.2s ease width;
     z-index: 1;
@@ -151,10 +158,11 @@ body {
 #player-content {
     position: relative;
     height: 100%;
-    background-color: #fff;
+    background-color: #49418025;
     box-shadow: 0 30px 80px #656565;
     border-radius: 15px;
     z-index: 2;
+    box-shadow: inset 0 0 10px rgb(216, 214, 214);
 }
 
 #album-art {
@@ -277,11 +285,12 @@ body {
 }
 
 #player-controls {
-    width: 250px;
+    width: 350px;
     height: 100%;
     margin: 0 5px 0 141px;
     float: right;
     overflow: hidden;
+
 }
 
 .control {
@@ -294,14 +303,14 @@ body {
     width: 26px;
     height: 26px;
     padding: 25px;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 6px;
     cursor: pointer;
 }
 
 .button i {
     display: block;
-    color: #d6dee7;
+    color: rgb(155, 152, 152);
     font-size: 26px;
     text-align: center;
     line-height: 1;
@@ -321,13 +330,14 @@ body {
 }
 
 #list {
-    width: 500px;
+    width: 700px;
     height: calc(100vh - 240px);
     background-color: rgba(230, 210, 210, 0.2);
     margin: auto;
     margin-top: 20px;
     overflow-y: scroll;
     overflow-x: hidden;
+    box-shadow: 0 0 20px rgb(141, 141, 158);
 
 }
 
@@ -340,7 +350,7 @@ body {
 
 #list>ul>li {
     padding: 5px 10px 5px 25px;
-    border-bottom: 1px solid rgba(82, 80, 80, 0.2);
+    border-bottom: 1px solid rgba(82, 80, 80, 0.363);
     cursor: pointer;
 }
 
@@ -349,23 +359,50 @@ body {
 }
 
 .list-name {
+    font-weight: 600;
     color: rgb(253, 253, 253);
     font-size: 16px;
 
 }
 
 .list-artist {
-    color: rgb(186, 183, 202);
+    color: rgb(253, 237, 212);
     font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
 }
 
-@media screen and (max-width: 1007px) {
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    box-shadow: inset 0 0 5px rgb(216, 214, 214);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(250, 231, 205);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 255, 255);
+}
+
+
+@media screen and (max-width: 640px) {
     #app-cover {
         width: 100%;
     }
 
     #list {
         width: 100%;
+    }
+
+    #player-controls {
+        width: 250px;
     }
 
 }
