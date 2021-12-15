@@ -399,10 +399,28 @@ body {
 
     #list {
         width: 100%;
+        height: calc(100vh - 350px);
     }
 
     #player-controls {
         width: 250px;
     }
+
+    #app-cover {
+        width: 100%;
+    }
+
+    #album-art {
+        position: absolute;
+        top: -40px;
+        width: 100px;
+        height: 100px;
+        margin-left: 40px;
+    }
+
+    #player-controls {
+        width: calc(100% - 140px);
+    }
+
 
 }
