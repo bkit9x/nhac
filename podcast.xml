@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Podcast của Kha</title>
+    <description>Đây là podcast về nhạc Rap</description>
+    <link>https://bkit9x.github.io/nhac</link>
+    <item>
+      <title>100 ngày ha cam (LoFi ver) - Giang Nguyen x Duckie (Prod. Duckie)</title>
+      <artist>Duckie</artist>
+      <link>https://raw.githubusercontent.com/bkit9x/nhac/main/Musics/100-ngay-ha-cam-giang-nguyen-x-duckie-lofi-ver.mp3</link>
+      <enclosure url="https://raw.githubusercontent.com/bkit9x/nhac/main/Musics/100-ngay-ha-cam-giang-nguyen-x-duckie-lofi-ver.mp3" type="audio/mpeg"/>
+    </item>
+  </channel>
+</rss>
