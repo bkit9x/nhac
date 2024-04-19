@@ -425,7 +425,7 @@ body {
 
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 320px) {
 #album-art{display:none}
 .button i{font-size: 1rem;}
 #bg-artwork{display:none}
