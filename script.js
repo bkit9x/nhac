@@ -2,6 +2,7 @@
 $(function () {
     // ajax get musics.json
     var songs = [];
+    var audio;
     $.getJSON("./musics.json", function (data) {
         songs = data;
     })
@@ -24,6 +25,39 @@ $(function () {
                 seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0,
                 buffInterval = null, tFlag = false;
             var playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+
+
+
+            // điều khiển
+            $(document).keydown(function (event) {
+                if (event.key === 'ArrowUp' || event.key === '2') {
+                    // Tăng âm lượng
+                    audio.volume += 0.1;
+                    if (audio.volume > 1) {
+                        audio.volume = 1;
+                    }
+                } else if (event.key === 'ArrowDown' || event.key === '8') {
+                    // Giảm âm lượng
+                    audio.volume -= 0.1;
+                    if (audio.volume < 0) {
+                        audio.volume = 0;
+                    }
+                } else if (event.key === 'ArrowRight' || event.key === '6') {
+                    // Next bài hát
+                    selectTrack(1);
+                } else if (event.key === 'ArrowLeft' || event.key === '4') {
+                    // Prev bài hát
+                    selectTrack(-1);
+                    //nếu nhấn enter hoặc space
+                } else if (event.key === 'Enter' || event.key === ' ' || event.key === '5') {
+                    playPause();
+                }
+
+            });
+
+
+            // điều khiển
+
 
 
             function shuffle(a) {
